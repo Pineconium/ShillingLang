@@ -1,0 +1,29 @@
+#~imp (clock) // <- for delay functions
+
+start Roll;
+
+blue Roll {
+    vari Pick = rndi(1, 2);
+    if %Pick = 1 {
+        Loop;
+    }else{
+        WhileFunc;
+    }
+}
+
+blue Loop {
+    forever {
+        parrot("I'll show up every 1 seconds!");
+        snooze(1000);   // <- 1000 ms / 1 sec.
+    }
+}
+
+blue WhileFunc {
+    while %Count < 20 {
+        parrot("Hello, World!");
+        Count++;    // <- add 1 to Count.
+    }
+
+    parrot("Done!");
+    exit;
+}

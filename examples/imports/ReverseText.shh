@@ -1,0 +1,13 @@
+#~imp (string)
+
+act ReverseText(str x) {
+    vari Count = 0;
+    list Text = [null]; // <- empty list.
+
+    while %Count < strleng(%x) {
+        %List.additem(letter(strleng(%x) - %Count));
+        Count++;
+    }
+
+    output(%List.merged);
+}

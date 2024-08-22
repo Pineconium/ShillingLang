@@ -1,0 +1,7 @@
+#~imp "ReverseText.shh"
+start Main;
+
+blue Main(){
+    ReverseText("Hello, World!");
+    exit;
+}

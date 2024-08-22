@@ -1,0 +1,11 @@
+list Fruits =[
+    "Banana", "Apple", "Orange"
+];
+
+start Main;
+
+blue Main {
+    /* reverse sort (z<-a) */
+    parrot(%Fruits.revsort + " heres your fruits.");
+    exit;
+}
