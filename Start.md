@@ -1,21 +1,21 @@
 # Getting started with Shilling
 ## 1. Getting the Right Stuff.
-To start using Shilling, you'll need either a compiler or an interputer for the language. (Note: This repo currently doesn't contain any compilers nor interputers for the language, you'll either need to create one yourself or look for any compiler/interputer). You'll also need any code editor of your choice.
+To start using Shilling, you'll need either a compiler or an interpreter for the language. (Note: This repo currently doesn't contain any compilers or interpreters for the language, you'll either need to create one yourself or look for any compiler/interpreter). You'll also need any code editor of your choice.
 
 ## 2. Creating a 'Hello, World!' program
-First create any file ending in `.shil`, and add this line:
+First, create any file ending in `.shil`, and add this line:
 ```
 start Main;
 ```
 Upon startup, this will imminently call the `Main` function. Now you just need to make a function, known as a 'blueprint'. To make a blueprint, do it the same way as you would creating a typical function (make sure the blueprint name is the same as the one you called in the `start` line):
 
-(NOTE: The `start` function can NOT start any blueprints with arguments in them. Doing so will give an "Invaild Start Function" error.)
+(NOTE: The `start` function can NOT start any blueprints with arguments in them. Doing so will give an "Invalid Start Function" error.)
 ```
 blue Main(){
     /*...*/
 }
 ```
-Now its time to make it say 'Hello, World!' in two ways, via a direct string and a variable. To create a string variable, above your `start` line, add `vars [StringNameHere] = "Hello, World from a variable!";`. Now, lets make the Main blueprint print out your string, add `parrot("Hello, World!");` to your blueprint. All together it should look like this:
+Now it's time to make it say 'Hello, World!' in two ways, via a direct string and a variable. To create a string variable, above your `start` line, add `vars [StringNameHere] = "Hello, World from a variable!";`. Now, let's make the Main blueprint print out your string, add `parrot("Hello, World!");` to your blueprint. All together it should look like this:
 ```
 vars Hello = "Hello, World from a variable!";
 start Main;
@@ -25,7 +25,7 @@ blue Main(){
     parrot("Hello, World!");
 }
 ```
-While this will print out 'Hello, World!', this won't print out our string variable. To do this, for the argument of the `parrot` function, simpily make it `%[StringNameHere]`. So now it should look like this:
+While this will print out 'Hello, World!', this won't print out our string variable. To do this, for the argument of the `parrot` function, simply make it `%[StringNameHere]`. So now it should look like this:
 ```
 vars Hello = "Hello, World from a variable!";
 start Main;
@@ -41,9 +41,9 @@ blue Main(){
 }
 ```
 
-And thats how you make a 'Hello, World!' program in Shilling
+And that is how you make a 'Hello, World!' program in Shilling
 ## 3. Variables and Data
-Shilling has five types of data classes: strings, floats, intergers, booleans, and lists.
+Shilling has five types of data classes: strings, floats, integers, booleans, and lists.
 ```
 /* Shilling Variable Types */
 vars String = blank;     // <- String.
@@ -56,9 +56,9 @@ list List =[
     "Item 1", "Item 2"
 ];
 ```
-There are also 'Global', and 'Local' variables in Shilling, Global variables are declared outside of any blueprint, and can be accessed and modified from any blueprint, and from any file if you 'imported' the file using `#~imp`. Local variables are declared inside of a blueprint, and can only be accessed from inside that blueprint. For example, if you have a variable called "Banana" inside of a blueprint called "Orange", Orange will be able to access Banana's data, but another blueprint, lets call it 'Cherry', will not.
+There are also 'Global', and 'Local' variables in Shilling, Global variables are declared outside of any blueprint, and can be accessed and modified from any blueprint, and from any file if you 'imported' the file using `#~imp`. Local variables are declared inside of a blueprint, and can only be accessed from inside that blueprint. For example, if you have a variable called "Banana" inside of a blueprint called "Orange", Orange will be able to access Banana's data, but another blueprint, let's call it 'Cherry', will not.
 
-You can also create temporary variables, by adding `@temp` to the variables declarition.
+You can also create temporary variables, by adding `@temp` to the variables declaration.
 ```
 @temp vars TempVar = "This will only be appear until I retire it."
 ```
@@ -81,7 +81,7 @@ Name.rando      // <- random sort (changes every call).
 ## 4. Loops.
 There are multiple ways to declare a loop. Such as a `while` loop, which will keep running as long as a certain condition is true and a `forever` loop, which will keep running until a `escape` is called.
 
-Heres an example of a use of a `while` loop:
+Here is an example of a use of a `while` loop:
 ```
 vari Count = 1;
 start Main;
@@ -96,7 +96,7 @@ blue Main {
     exit;
 }
 ```
-This code will deplay 'Hello, World!' 20 times, once Count reaches 20, the loop will exit and print "Done" to the output. Heres an example of a `forever` loop:
+This code will display 'Hello, World!' 20 times, once the Count reaches 20, the loop will exit and print "Done" to the output. Here is an example of a `forever` loop:
 ```
 #~imp (clock) // <- for delay functions
 
@@ -127,16 +127,16 @@ blue Main {
 }
 ```
 ## 5. Imports
-You can import *Shilling Header Files* (`*.shh`) to use blueprints without heaving to redeclare them. A Shilling Header File's blueprint is known as an 'action', and can be used using `act`.
+You can import *Shilling Header Files* (`*.shh`) to use blueprints without having to redeclare them. A Shilling Header File's blueprint is known as an 'action', and can be used using `act`.
 
-Heres what an action would look like:
+Here is what an action would look like:
 ```
 act ActionName(args) {
     /*...*/
 }
 ```
 
-Heres a custom action that reverses a string using the `string` standard import (lets call this `MyImp.shh`):
+Here is a custom action that reverses a string using the `string` standard import (let's call this `MyImp.shh`):
 ```
 #~imp (string)
 
@@ -163,3 +163,6 @@ blue Main(){
 }
 ```
 The output should be `!dlroW ,olleH`.
+
+## 6. Standard Library.
+Adding on to `.shil` files, Shilling compilers and interpreters must come with what is known as a 'Standard Library', which are global imports for stuff such as time, mathematical functions, string management, etc.
