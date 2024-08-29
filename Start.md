@@ -165,4 +165,4 @@ blue Main(){
 The output should be `!dlroW ,olleH`.
 
 ## 6. Standard Library.
-Adding on to `.shil` files, Shilling compilers and interpreters must come with what is known as a 'Standard Library', which are global imports for stuff such as time, mathematical functions, string management, etc.
+Adding on to `.shh` files, Shilling compilers and interpreters must come with what is known as a 'Standard Library', which are global imports for stuff such as time, mathematical functions, string management, etc.
